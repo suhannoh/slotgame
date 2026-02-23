@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <!-- 
+    주제 : 슬롯머신 게임 
+    이유 : 
+    과정 : 
+      1. 사용자가 돌리기 버튼을 누른다 
+         (돌리기 버튼이 멈추기 버튼으로 변경) 
+      2. 3개의 슬롯에서 각각 랜덤한 이모지를 반복하여 넣는다 
+      3. 사용자가 멈추기 버튼을 누르면 맨 왼쪽의 슬롯부터 1초간격으로 Interval을 종료한다
+      4. 3개의 슬롯이 모두 같으면 (확률은 5x5x5 = 125분의 1)
+         "축하합니다! 모두 일치합니다!"" 를 출력하고 
+         같지 않다면 "아쉽지만 다시 시도해보세요!" 를 출력한다
+
+  -->
+  <div class="container">
+    <h2> 슬롯머신 </h2>
+    <div class="slot-machine">
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+    </div>
+    <button id="spin-button" class="btn">돌리기</button>
+    <button id="stop-button" class="btn stop hidden" >멈추기</button>
+
+    <div id="result"> </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
