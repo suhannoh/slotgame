@@ -13,8 +13,8 @@ const randomEmoji = (slot) => {
     slot.textContent = emojis[randomIndex];
 }
 
-// 돌리기 버튼 이벤트리스너 
-// 각각 슬롯에 인터벌을 이용해서 계속해서 이모지를 변경해줌
+// 사용자가 돌리기 버튼을 클릭시 진행되는 함수
+  // 각각 슬롯에 인터벌을 이용해서 계속해서 이모지를 변경해줌
 $spinBtn.addEventListener('click', () => {
   $spinBtn.disabled = true; // 혹시 모를 중복 클릭 방지
   $spinBtn.classList.add('hidden');
@@ -27,6 +27,8 @@ $spinBtn.addEventListener('click', () => {
   spinTimer3 = setInterval(() => randomEmoji($slots[2]), 100);
 });
 
+
+// 사용자가 멈추기 버튼을 클릭시 진행되는 함수
 $stopBtn.addEventListener('click', () => {
   // 1번 슬롯부터 1초 간격으로 타이머 종료
   setTimeout(() => {
@@ -41,7 +43,9 @@ $stopBtn.addEventListener('click', () => {
     $stopBtn.classList.add('hidden');
     $spinBtn.classList.remove('hidden');
     $spinBtn.disabled = false;
-    const result = $slots[0].textContent === $slots[1].textContent && $slots[1].textContent === $slots[2].textContent ? '축하합니다! 모두 일치합니다!' : '아쉽지만 다시 시도해보세요!';
+    
+    const result = $slots[0].textContent === $slots[1].textContent && $slots[1].textContent === $slots[2].textContent ?
+                                                               '축하합니다! 모두 일치합니다!' : '아쉽지만 다시 시도해보세요!';
 
     $result.textContent = result;
   }, 2000);
